@@ -1,0 +1,140 @@
+<a name="footer"></a>
+
+<footer class=" footer-box c-layout-footer c-layout-footer-3 c-bg-dark" >
+	<div class="c-prefooter">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 footer-details">
+					<div class="c-container c-first">
+						<div class="c-content-title-1">
+						
+						<img src="../assets/logo-white.png" width="140" alt="logo" class="img-responsive"/>
+							
+						<div class="c-line-left hide"></div>
+							<p class="c-text">
+								<%= @footer_section.title if @footer_section %>
+							</p>
+						</div>
+
+						<ul class=" col-md-6 c-links">
+							<li><a href="/">Home</a></li>
+							<li><a href="/about_us">About Us</a></li>
+							<li><a href="/team">Team</a></li>
+							<li><a href="/services">Services</a></li>
+							<li><a href="/treatments">Treatments</a></li>
+						</ul>
+
+						<ul class=" col-md-6 c-links" style="margin-left: 20px;">
+							<li><a href="/offers_packages_and_pricing#price">Price & Packages</a></li>
+							<li><a href="/offers_packages_and_pricing">Offers</a></li>
+							<li><a href="/gallery">Gallery</a></li>
+							<li><a href="/contact_us">Contact Us</a></li>
+							<li><a href="/sign_in" target="_blank">Admin Login</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="c-container">
+						
+						<div class="c-content-title-1">
+							<h3 class="c-font-uppercase c-font-bold c-font-white">Latest Posts</h3>
+							<div class="c-line-left hide"></div>
+						</div>
+
+						<div class="c-blog">
+							
+							<% @recent_blog_posts = Dhatu::BlogPost.published.order("created_at DESC").page(1).per(2) %>
+
+							<% @recent_blog_posts.each_with_index do |blog_post, i| %>
+
+								<div class="c-post">
+									<!-- <div class="c-post-img">
+										<%#= display_image(blog_post, 'cover_image.image.medium.url') %>
+									</div> -->
+									<div class="c-post-content" style="padding-left:0px;">
+										<h4 class="c-post-title">
+											<%= link_to blog_post.title, "#" %>
+										</h4>
+										<p class="c-text"><%= truncate(raw(blog_post.meta_description), :length => 100) %> <%= link_to "(Read More)", "#" %></p>
+									</div>
+								</div>
+
+							<% end %>
+
+							<a href="/" class="btn btn-md c-btn-border-1x c-theme-btn c-btn-uppercase c-btn-square c-btn-bold c-read-more hide">Read More</a>
+
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="c-container c-last">
+						<div class="c-content-title-1">
+							<h3 class="c-font-uppercase c-font-bold c-font-white">Find us</h3>
+							<div class="c-line-left hide"></div>
+							
+						</div>
+						
+						<ul class="c-address">
+							<li>
+								<i class="icon-pointer c-theme-font"></i>
+								<%= @main_branch.try(:address_1) %><br>
+								<%= @main_branch.try(:address_2) %><br>
+								<%= @main_branch.try(:address_3) %><br>
+							</li>
+							<li>
+								<i class="icon-call-end c-theme-font"></i>
+								<%= @main_branch.try(:landline) %>
+							</li>
+							<li>
+								<i class="icon-screen-smartphone c-theme-font"></i>
+								<%= @main_branch.try(:mobile) %>
+							</li>
+
+							<li>
+								<i class="icon-envelope c-theme-font"></i> <%= @main_branch.try(:email) %>
+							</li>
+						</ul>
+						<ul class="c-socials" style="float: none;">
+							<!-- <li><a href="<%= @main_branch.try(:facebook) %>" target="_blank"><i class="icon-social-facebook"></i></a></li> -->
+							<!-- <li><a href="<%= @main_branch.try(:twitter) %>" target="_blank"><i class="icon-social-twitter"></i></a></li> -->
+              <li><a href="https://www.facebook.com/RedVelvetSalon/" target="_blank"><i class="icon-social-facebook"></i></a></li>
+              <li><a href="https://twitter.com/xxjanexxwalshx" target="_blank"><i class="icon-social-twitter"></i></a></li>
+							<li><a href="<%= @main_branch.try(:youtube) %>" target="_blank"><i class="icon-social-youtube"></i></a></li>
+							<li><a href="<%= @main_branch.try(:tubler) %>" target="_blank"><i class="icon-social-tumblr"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="c-postfooter" >
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 c-col">
+					<p class="c-copyright c-font-grey">
+						2017 &copy; Red Velvet Salon
+						<span class="c-font-grey-3">All Rights Reserved. <br />Designed, Developed and Maintained by <a href="http://www.rightsolutions.ae" style="color: #eeeeee;" target="_blank">Right Solutions</a></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</footer>
+
+
+<div class="c-layout-go2top">
+	<i class="icon-arrow-up"></i>
+</div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

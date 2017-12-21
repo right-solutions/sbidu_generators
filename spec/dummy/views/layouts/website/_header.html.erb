@@ -1,0 +1,167 @@
+<header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" >
+
+	<div class="c-topbar c-topbar-light c-solid-bg">
+		<div class="container">
+			<!-- BEGIN: INLINE NAV -->
+			<nav class="c-top-menu c-pull-left">
+				<span><b>Call Us:</b>  <%= @main_branch.try(:landline) %></span>
+			</nav>
+			<!-- END: INLINE NAV -->
+			<!-- BEGIN: INLINE NAV -->
+			<nav class="c-top-menu c-pull-right">
+				<ul class="c-icons c-theme-ul">
+          <!-- <li><a href="<%= @main_branch.try(:facebook) %>" target="_blank"><i class="fa fa-facebook"></i></a></li> -->
+          <!-- # <li><a href="<= @main_branch.try(:twitter) %>" target="_blank"><i class="fa fa-twitter"></i></a></li> -->
+					<li><a href="https://twitter.com/xxjanexxwalshx" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.facebook.com/RedVelvetSalon/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="<%= @main_branch.try(:youtube) %>" target="_blank"><i class="fa fa-youtube"></i></a></li>
+					<li><a href="<%= @main_branch.try(:tumblr) %>" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+				</ul>
+			</nav>
+			<!-- END: INLINE NAV -->
+		</div>
+	</div>
+
+	<div class="c-navbar">
+		<div class="container">
+			
+			<!-- BEGIN: BRAND -->
+			<div class="c-navbar-wrapper clearfix">
+				<div class="c-brand c-pull-left">
+					<a href="/" class="c-logo">
+						<img src="/assets/logo.png" alt="Logo" class="c-desktop-logo">
+					</a>
+					<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+						<span class="c-line"></span>
+						<span class="c-line"></span>
+						<span class="c-line"></span>
+					</button>
+				</div>
+				<!-- END: BRAND -->
+				
+				<!-- BEGIN: HOR NAV -->
+				<!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
+				<!-- BEGIN: MEGA MENU -->
+				<!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
+
+				<div class="m-top-16">
+					<ul class="col-md-2 top-icon c-socials">
+						<li><a href="https://www.facebook.com/RedVelvetSalon/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/xxjanexxwalshx" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="<%= @main_branch.try(:youtube) %>" target="_blank"><i class="fa fa-youtube"></i></a></li>
+						<li><a href="<%= @main_branch.try(:tumblr) %>" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+					</ul>
+
+					<div class="col-md-3 fl-r">
+						<!-- BEGIN: CONTENT/BLOG/BLOG-SIDEBAR-1 -->
+						<form action="/blogs/search" method="get">
+							<div class="input-group">
+						    <input type="text" class="form-control  search-field-box c-square c-theme-border" placeholder="Search..." style="" name="query">
+						    <span class="input-group-btn">
+						      <button class="btn c-theme-btn c-theme-border c-btn-square" type="button"><i class="fa fa-search"></i></button>
+						    </span>
+						  </div>
+						</form>
+					</div>
+
+					<div class="col-md-3 top-phone">
+						<span><b>Call Us:</b>  <%= @main_branch.try(:landline) %></span>
+					</div>
+				</div>
+
+				<nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
+					
+					<div class="clearfix"></div>
+						<ul class="nav navbar-nav c-theme-nav">
+
+							<%# binding.pry %>
+
+							<li class="c-menu-type-classic <%= params[:controller] == 'website/home' ? 'c-active' : '' %>"><a href="/" class="c-link">Home</a></li>
+						
+							<li class="c-menu-type-classic <%= params[:controller] == 'website/about_us' ? 'c-active' : '' %>">
+							   <a href="/about_us" class="c-link dropdown-toggle">About Us<span class="c-arrow c-toggler"></span></a>
+							</li>
+
+							<li class="c-menu-type-classic <%= params[:controller] == 'website/services' ? 'c-active' : '' %>">
+						    <a href="/services" class="c-link dropdown-toggle">Services<span class="c-arrow c-toggler"></span></a>
+
+						    <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+						    	<% @service_categories.each do |sct| %>
+						    		<li class="dropdown-submenu">
+						    			<a href="/services/<%= sct.permalink %>"><%= sct.name %><span class="c-arrow c-toggler"></span></a>
+						    		</li>
+						    	<% end %>
+					        
+					        <!-- <li class="dropdown-submenu">
+				            <a href="/services#hair">Hair<span class="c-arrow c-toggler"></span></a>
+				            <ul class="dropdown-menu c-pull-left">
+			                <li><a href="/services#hair_color">Hair Color</a> </li>
+			                <li><a href="/services#hair_styling">Hair Styling</a> </li>
+			                <li><a href="/services#straightening_rebonding"> Straightening & Rebonding</a> </li>
+			                <li><a href="/services#hair_perming">Perming</a> </li>
+			                <li><a href="/services#hair_brazilian_keratin">Brazilian Keratin</a> </li>
+			                <li><a href="/services#hair_botox_dna">Hair Botox DNA</a> </li>
+			                <li><a href="/services#hair_treatments">Hair Treatments</a> </li>
+				            </ul>
+					        </li>
+
+						      <li class="dropdown-submenu">
+						        <a href="/services#beauty">Beauty<span class="c-arrow c-toggler"></span></a>
+				            <ul class="dropdown-menu c-pull-left">
+				                <li><a href="/services#beauty_facial">Facial & Skin Services</a> </li>
+				                <li><a href="/services#beauty_nail_services">Nail Services</a> </li>
+				                <li><a href="/services#beauty_pedicure"> Pedicure & Manicure</a> </li>
+				                <li><a href="/services#beauty_threading">Threading & Tinting</a> </li>
+				                <li><a href="/services#beauty_makeup">Makeup</a> </li>
+				                <li><a href="/services#beauty_bridal">Bridal Makeup</a> </li>
+				                <li><a href="/services#beauty_henna">Henna</a> </li>
+				            </ul>
+						      </li>
+
+					        <li class="dropdown-submenu">
+					          <a href="/services#body_pedicure">Body<span class="c-arrow c-toggler"></span></a>
+				            <ul class="dropdown-menu c-pull-left">
+			                <li><a href="/services#body_waxing">Body Waxing</a> </li>
+			                <li><a href="/services#body_massage">Body Massage </a> </li>
+			                <li><a href="/services#body_scrub"> Body Scrub</a> </li>
+				            </ul>
+					        </li>
+
+					        <li class="dropdown-submenu">
+				            <a href="/services#body_scrub">Treatments<span class="c-arrow c-toggler"></span></a>
+				            <ul class="dropdown-menu c-pull-left">
+				              <li><a href="/services#body_scrub">Shahnaz Diamond-Facial</a></li>
+						        	<li><a href="/services#body_scrub">Shahnaz Gold 24 CT- Facial</a></li>    
+						         	<li><a href="/services#body_scrub">Shahnaz Oxygen Facial</a></li>
+									 		<li><a href="/services#body_scrub">Shahnaz Pearl Facial</a> </li>
+									 		<li><a href="/services#body_scrub">Shahnaz Flower Facial</a></li>
+											<li><a href="/services#body_scrub">Shahnaz Acne 45 Minutes Treatment</a></li>
+											<li><a href="/services#body_scrub">Shahnaz Eye Treatment -30 Minutes</a></li>
+											<li><a href="/services#body_scrub">Deep Cleansing-Galvanic Treatment 60 Minutes</a></li>
+											<li><a href="/services#body_scrub">Body Massage, Body Scrub & Body Polishing</a></li>
+					           </ul>
+					       	</li> -->
+						    </ul>
+							</li>
+
+							<li>
+							<li class="c-menu-type-classic <%= params[:controller] == 'website/offers' ? 'c-active' : '' %>">
+						    <a href="/offers_packages_and_pricing" class="c-link dropdown-toggle">Price / Offers<span class="c-arrow c-toggler"></span></a>
+						    <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+					        <li><a href="/offers_packages_and_pricing">Offers</a></li>
+					        <li><a href="/offers_packages_and_pricing#packages">Packages</a></li>
+					        <li><a href="/offers_packages_and_pricing#price">Price </a></li>
+						    </ul>
+							</li>
+
+							<li class="<%= params[:controller] == 'website/contact_us' ? 'c-active' : '' %>"><a href="/contact_us" class="c-link">Contact Us</a></li>
+						</ul>
+				</nav>
+					<!-- END: MEGA MENU --><!-- END: LAYOUT/HEADERS/MEGA-MENU -->
+					<!-- END: HOR NAV -->
+			</div>
+			
+		</div>
+	</div>
+
+</header>

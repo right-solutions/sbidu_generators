@@ -1,0 +1,239 @@
+<%
+	dhatu_items = {
+		sections: {
+			text: "Sections",
+			icon_class: "fa-reorder",
+			url: dhatu.sections_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Section)
+		},
+		blog_posts: {
+			text: "Blog",
+			icon_class: "fa-newspaper-o",
+			url: dhatu.blog_posts_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::BlogPost)
+		},
+		services: {
+			text: "Services",
+			icon_class: "fa-glass",
+			url: dhatu.services_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Service)
+		},
+		branches: {
+			text: "Branches",
+			icon_class: "fa-location-arrow",
+			url: dhatu.branches_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Branch)
+		},
+		offers: {
+			text: "Offers",
+			icon_class: "fa-gift",
+			url: dhatu.offers_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Offer)
+		},
+		events: {
+			text: "Events",
+			icon_class: "fa-calendar",
+			url: dhatu.events_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Event)
+		},
+		testimonials: {
+			text: "Testimonials",
+			icon_class: "fa-comment",
+			url: dhatu.testimonials_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Testimonial)
+		},
+		team: {
+			text: "Team",
+			icon_class: "fa-group",
+			url: dhatu.team_members_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::TeamMember)
+		},
+		categories: {
+			text: "Categories",
+			icon_class: "fa-sitemap",
+			url: dhatu.categories_url,
+			has_permission: @current_user.has_read_permission?(Dhatu::Category)
+		}
+	}
+%>
+<%
+	user_items = {
+		users: {
+			text: "Manage Users",
+			icon_class: "fa-user",
+			url: usman.users_url,
+			has_permission: @current_user.has_read_permission?(User)
+		},
+		registrations: {
+			text: "Manage Registrations",
+			icon_class: "fa-mobile",
+			url: usman.registrations_url,
+			has_permission: @current_user.has_read_permission?(Registration)
+		},
+		roles: {
+			text: "Manage Roles",
+			icon_class: "linecons-graduation-cap",
+			url: usman.roles_url,
+			has_permission: @current_user.has_read_permission?(Role)
+		},
+		permissions: {
+			text: "Manage Permissions",
+			icon_class: "fa-lock",
+			url: usman.permissions_url,
+			has_permission: @current_user.has_read_permission?(Permission)
+		}
+	}
+%>
+<%
+	configuration_items = {
+		features: {
+			text: "Manage Features",
+			icon_class: "linecons-diamond",
+			url: usman.features_url,
+			has_permission: @current_user.has_read_permission?(Feature)
+		}
+	}
+%>
+<%
+	pattana_items = {
+		countries: {
+			text: "Manage Countries",
+			icon_class: "fa-flag-checkered",
+			url: pattana.countries_url,
+			has_permission: @current_user.has_read_permission?(Country)
+		},
+		regions: {
+			text: "Manage Regions",
+			icon_class: "fa-globe",
+			url: pattana.regions_url,
+			has_permission: @current_user.has_read_permission?(Region)
+		},
+		cities: {
+			text: "Manage Cities",
+			icon_class: "fa-map-marker",
+			url: pattana.cities_url,
+			has_permission: @current_user.has_read_permission?(City)
+		},
+		
+	}
+%>
+<div class="sidebar-menu toggle-others fixed collapsed">
+	
+	<div class="sidebar-menu-inner">
+		
+		<header class="logo-env">
+			
+			<!-- logo -->
+			<div class="logo">
+				<a href="/" class="logo-expanded"><img src="/assets/logo-white.png" width="180" alt="" /></a>
+				<a href="/" class="logo-collapsed"><img src="/assets/logo-small.png" width="40" alt="" /></a>
+			</div>
+			
+			<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+			<div class="mobile-menu-toggle visible-xs">
+				<!-- <a href="#" data-toggle="notifications-menu">
+					<i class="fa-bell-o"></i><span class="badge badge-success">7</span>
+				</a> -->
+				<a href="#" data-toggle="user-info-menu">
+					<%= display_image(@current_user, "profile_picture.image.small.url", width: "32", height: "auto", class: "img-circle img-inline userpic-32", alt: @current_user.display_name) %>
+				</a>
+				<a href="#" data-toggle="mobile-menu"><i class="fa-bars"></i></a>
+			</div>
+			
+		</header>
+		
+		
+		<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+		<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+		<ul id="main-menu" class="main-menu multiple-expanded auto-inherit-active-class">
+				
+			<% if @current_user.super_admin? || @current_user.has_role?("Site Admin") %>
+				<li class="<%= nav_active?('admin/dashboard') ? 'active' : ''  %>">
+					<%= link_to raw("<i class=\"linecons-desktop\"></i> <span class='title'>Dashboard</span>"), dhatu.dashboard_path %>
+				</li>
+			<% else %>
+				<li class="<%= nav_active?('profile/dashboard') ? 'active' : ''  %>">
+					<%= link_to raw("<i class=\"linecons-desktop\"></i> <span class='title'>Dashboard</span>"), usman.my_account_url %>
+				</li>
+			<% end %>
+
+			<li class="">
+				<a href="#">
+					<i class="fa-trello"></i>
+					<span class="title">Manage Contents</span>
+				</a>
+				<ul>
+					<% dhatu_items.each do |key, values| %>
+					<% next unless values[:has_permission] %>
+					<li class="">
+						<%= link_to raw("<i class=\"#{values[:icon_class]}\"></i> <span class='title'>#{values[:text]}</span>"), values[:url] %>
+					</li>
+					<% end %>
+				</ul>
+			</li>
+
+			<li class="">
+				<a href="#">
+					<i class="fa-group"></i>
+					<span class="title">Manage Users</span>
+				</a>
+				<ul>
+					<% user_items.each do |key, values| %>
+					<% next unless values[:has_permission] %>
+					<li class="">
+						<%= link_to raw("<i class=\"#{values[:icon_class]}\"></i> <span class='title'>#{values[:text]}</span>"), values[:url] %>
+					</li>
+					<% end %>
+				</ul>
+			</li>
+
+			<li class="">
+				<a href="#">
+					<i class="linecons-params"></i>
+					<span class="title">Configure</span>
+				</a>
+				<ul>
+					<% configuration_items.each do |key, values| %>
+					<% next unless values[:has_permission] %>
+					<li class="">
+						<%= link_to raw("<i class=\"#{values[:icon_class]}\"></i> <span class='title'>#{values[:text]}</span>"), values[:url] %>
+					</li>
+					<% end %>
+				</ul>
+			</li>
+
+			<% if @current_user.super_admin? %>
+			<li class="">
+				<a href="#">
+					<i class="fa-globe"></i>
+					<span class="title">Manage Location</span>
+				</a>
+				<ul>
+					<% pattana_items.each do |key, values| %>
+					<% next unless values[:has_permission] %>
+					<li class="">
+						<%= link_to raw("<i class=\"#{values[:icon_class]}\"></i> <span class='title'>#{values[:text]}</span>"), values[:url] %>
+					</li>
+					<% end %>
+				</ul>
+			</li>
+			<% end %>
+
+			<li class="<%= nav_active?('profile/profile') ? 'active' : ''  %>">
+				<a href="#"><i class="linecons-user"></i><span class="title">My Account</span></a>
+				<ul>
+					<li class="<%= nav_class("profile/settings") %>">
+				    <%= link_to raw("<i class=\"linecons-cog\"></i> <span class='title'>User Settings</span>"), "#" %>
+				  </li>
+				</ul>
+			</li>
+
+			<li class="">
+		    <%= link_to raw("<i class=\"fa-rocket\"></i> <span class='title'>Launch Site</span>"), "/" %>
+		  </li>
+
+		</ul>
+		
+	</div>
+	
+</div>

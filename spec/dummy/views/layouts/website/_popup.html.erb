@@ -1,0 +1,122 @@
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog home-popup">
+	  <!-- Modal content-->
+	  <div class="modal-content">
+	   
+	    <div class="modal-body">
+	    	
+	    	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	     	
+	     	<div class="clearfix"></div>
+
+	     	<div class="row">
+	     		<div class="col-sm-6"></div>
+	     		<div class="col-sm-6">
+				
+				    <h2 class="pop-up-Head"><%= @promotion.try(:title) %></h2>
+				    <h3 class="pop-up-Head-Cap"><%= @promotion.try(:short_description) %></h3>
+
+				    <% @promotion_enquiry =  Dhatu::PromotionEnquiry.new %>
+
+		    		<%= form_for(@promotion_enquiry, :html => {:id=>"form_promotion_enquiry", :class=>"mb-0 form-horizontal", :role => "form", :method => (@promotion_enquiry.new_record? ? :post : :put), :remote=>true}) do |f| %>
+
+				      <div id="classified_form_error">
+				        <%= @promotion_enquiry.errors[:base].to_sentence %>
+				      </div>
+
+				      <%= hidden_field_tag "dhatu/promotion_enquiry[promotion_id]",(@promotion.try(:id) || params[:pr])  %>
+
+					    <div class="Book-now-formBg">
+					     	
+								<div class="row mar-b-5">
+										<div class="col-sm-12">
+											<input type="text" placeholder="e.g: Eliza" class="pop-up-fields form-control" name="dhatu/promotion_enquiry[name]">
+										</div>
+								</div>
+
+								<div class="row mar-b-5">
+										<div class="col-sm-12">
+											<input type="text" placeholder="e.g: eliza@example.com" class="pop-up-fields form-control" name="dhatu/promotion_enquiry[email]">
+										</div>
+								</div>
+
+								<div class="row mar-b-5">
+										<div class="col-sm-12">
+											<input type="text" placeholder="+971 50 1234567" class="pop-up-fields form-control" name="dhatu/promotion_enquiry[phone]">
+										</div>
+								</div>
+
+					     	<% hsh = @promotion.promotion_attributes_with_values %>
+				        <% hsh.each do |name, values| %>
+				        	<div class="row mar-b-5">
+						     		<div class="col-sm-12">
+						     			<% case values[:data_type] %>
+					            <% when "text", "integer", "date" %>
+					              <%= text_field_tag("promotion_attributes[#{name}]", values[:selected], html_options: {type: values[:data_type], class: "pop-up-fields form-control"}) %>
+					            <% when "boolean" %>
+					              <%= check_box_tag("promotion_attributes[#{name}]", values[:selected], html_options: {class: "checkbox mt-10"}) %>
+					            <% when "list_drop_down", "list_radio_button" %>
+					              <%= select_tag("promotion_attributes[#{name}]", options_for_select(values[:values], values[:selected] ), :prompt=>"Select #{name}", :class=>"form-control") %>
+					            <% else %>
+					            <% end %>
+
+						     		</div>
+						     	</div>
+				        <% end %>
+
+							 	<div class="row mar-b-5">
+								  <div class="col-sm-12">
+								     <button type="submit" class="btn pop-up-submit-btn">Submit</button> 
+								  </div>
+								</div>
+					    </div>
+					  <% end %>
+
+				  </div>
+				</div>
+
+			</div>
+	    
+	    <div class="modal-footer">
+	     
+	     <div class="row">
+	     		<div class="col-sm-4">
+	     			<ul class="footer-ul-address">
+	     				<li class="address-pop-up">
+	     					<%= @main_branch.try(:address_1) %><br />
+								<%= @main_branch.try(:address_2) %><br />
+								<%= @main_branch.try(:address_3) %><br />
+	     				</li>
+	     			</ul>
+	     		</div>
+	     		<div class="col-sm-5">
+	     			<ul class="footer-ul">
+	     				<li class="address-pop-up">
+	     					<span class="li-phone"></span>
+	     					<span><%= @main_branch.try(:landline) %></span>
+	     				</li>
+	     				<li class="address-pop-up">
+	     					<span class="li-phone"></span>
+	     					<span><%= @main_branch.try(:mobile) %></span>
+	     				</li>
+	     				<li class="address-pop-up">
+	     					<span class="li-mail"></span>
+	     					<span><%= @main_branch.try(:email) %></span>
+	     				</li>
+	     			</ul>
+	     		</div>
+	     		<div class="col-sm-3">
+	     			<img src="../assets/logo-white.png" class="img-responsive right-align" alt="logo" style="padding-top: 5px;">
+	     		</div>
+	     </div>
+
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<style type="text/css">
+	.home-popup .modal-content .modal-body {
+		background: #000 url(<%= @promotion.try(:cover_image).try(:image).try(:url) %>) no-repeat left center;
+	}
+</style>
