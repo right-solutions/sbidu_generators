@@ -75,8 +75,22 @@ rspec
 
 ## Master Data
 
-We need to setup some master data for this proejct to run.
-For e.g: Features, Roles, City, Country etc
+As this rails app is generated with sbidu generators, it comes with wrapper rake task to import master data, data and dummy data.
+
+
+```bash
+$ bundle exec rake import:data:all verbose=false
+$ bundle exec rake import:data:dummy:all verbose=false
+```
+
+You can also run it individually
+
+```bash
+$ bundle exec rake import:data:categories verbose=false
+$ bundle exec rake import:data:dummy:blog_posts verbose=false
+```
+
+Alternatively you could also run the rake task from the engine directly.
 
 ```bash
 $ bundle exec rake pattana:import:master_data:all verbose=false
@@ -156,7 +170,62 @@ create users.csv in db/import_data/ foler and fill data in it and run
 $ bundle exec rake usman:import:users verbose=false
 ```
 
+## Working with Docker 
+
+This project already has dockerfile and docker-compose.yml preconfigured. 
+
+First you need to build the images you need to run docker on
+
+```bash
+$ docker-compose build
+```
+
+Now that you have created the image, start the docker container.  
+
+Press Ctrl + C to stop 
+
+```bash
+$ docker-compose up
+```
+
+Run docker ps to see the running docker containers.
+Run docker images to see the images prepared which may / may not be using by this project.
+
+```bash
+$ docker ps
+$ docker images
+```
+Checkout my blog at www.kpvarma.com/docker to learn more about docker based rails development.
+
+Here is how you run a command on the container which is serving our application. (app is the name configured by docker-compose.yml which denotes to this project)
+
+```bash
+$ docker-compose run app rails db:migrate
+```
+
+Here is how you login to the container
+
+```bash
+$ docker ps
+$ docker exec -i -t 84d9f3fe48f9 /bin/bash
+# Or you could try this
+$ docker exec -i -t demositecom_app /bin/bash
+```
+
+for e.g: after starting the docker container by doing docker-compose up, you would want to create the database, run migrations and import dummy data to work with
+
+```bash
+docker exec -i -t 304079519b28 rails db:create db:migrate import:data:dummy:all
+```
+
+where 304079519b28 is the comtainer id
+
+
 ## Deployment Instructions
+
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04
+
+https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
 
 ```bash
 $ ssh deployer@34.250.212.49

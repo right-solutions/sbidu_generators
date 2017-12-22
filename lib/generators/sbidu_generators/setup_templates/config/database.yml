@@ -12,10 +12,10 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: root
+  host: mysql
 
 development:
   <<: *default
@@ -47,11 +47,11 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+#     url: 
 #
 production:
   <<: *default
   # Sbidu Generators - To Be Changed
   database: <%= app_name.gsub(".", "_") -%>_production
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: 
+  password: 
