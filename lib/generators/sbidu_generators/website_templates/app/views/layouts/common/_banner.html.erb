@@ -1,15 +1,15 @@
-<% if @banner %>
-  <% if @banner %>
-    <% style = "background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(#{@banner.try(:cover_image).image.url}) no-repeat right center" %>
-  <% else %>
-    <% style = "background-color: grey;" %>
-  <% end %>
+<%% if @banner %>
+  <%% if @banner.cover_image %>
+    <%% style = "background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(#{@banner.try(:cover_image).image.url}) no-repeat right center" %>
+  <%% else %>
+    <%% style = "background-color: grey;" %>
+  <%% end %>
 
-  <div class="banner" style="<%= style %>" >
+  <div class="banner" style="<%%= style %>" >
     <div class="container">
       <div class="float-left">
-        <h1><%= @banner.title %></h1>
-        <p><%= @banner.sub_title %></p>
+        <h1><%%= @banner.title %></h1>
+        <p><%%= @banner.sub_title %></p>
       </div>
       <ul class="float-right breadcrumbs">
         <li><a href="/">Home</a></li>
@@ -19,4 +19,4 @@
       <div class="clearfix"></div>
     </div>
   </div>
-<% end %>
+<%% end %>

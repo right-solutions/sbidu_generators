@@ -54,6 +54,15 @@ namespace 'import' do
 
         puts "Importing Team Members \t".yellow
         Rake::Task["dhatu:import:data:dhatu/team_members"].invoke
+
+        puts "Importing Promotions \t".yellow
+        Rake::Task["dhatu:import:data:dhatu/promotions"].invoke
+
+        puts "Importing Blog Posts \t".yellow
+        Rake::Task["dhatu:import:data:dhatu/blog_posts"].invoke
+        
+        puts "Importing Branches \t".yellow
+        Rake::Task["dhatu:import:data:dhatu/branches"].invoke
       
       rescue ArgumentError => e
           puts "Loading data - failed - #{e.message}".red
@@ -157,6 +166,15 @@ namespace 'import' do
 
           puts "Importing Team Members \t".yellow
           Rake::Task["dhatu:import:data:dummy:dhatu/team_members"].invoke
+
+          puts "Importing Promotions \t".yellow
+          Rake::Task["dhatu:import:data:dummy:dhatu/promotions"].invoke
+
+          puts "Importing Blog Posts \t".yellow
+          Rake::Task["dhatu:import:data:dummy:dhatu/blog_posts"].invoke
+          
+          puts "Importing Branches \t".yellow
+          Rake::Task["dhatu:import:data:dummy:dhatu/branches"].invoke
 
         rescue ArgumentError => e
             puts "Import Failed - #{e.message}".red

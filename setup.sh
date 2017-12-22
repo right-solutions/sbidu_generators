@@ -67,8 +67,8 @@ if [ $# -eq 0 ]
     fi
 
 		# Import required data
-		rails import:data:all
-    if [[ $? -ne 0 ]]; then
+    rails import:data:all
+		if [[ $? -ne 0 ]]; then
       echo "FAILED to import data"
       exit 1
     fi

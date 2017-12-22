@@ -54,6 +54,15 @@ namespace 'import' do
 
         puts "Importing Team Members \t".yellow
         Rake::Task["dhatu:import:data:dhatu/team_members"].invoke
+
+        puts "Importing Promotions \t".yellow
+        Rake::Task["dhatu:import:data:dhatu/promotions"].invoke
+
+        puts "Importing Blog Posts \t".yellow
+        Rake::Task["dhatu:import:data:dhatu/blog_posts"].invoke
+        
+        puts "Importing Branches \t".yellow
+        Rake::Task["dhatu:import:data:dhatu/branches"].invoke
       
       rescue ArgumentError => e
           puts "Loading data - failed - #{e.message}".red
@@ -63,6 +72,47 @@ namespace 'import' do
       end
       puts " "
       
+    end
+
+    ["Feature", "Role"].each do |cls_name|
+      name = cls_name.underscore.pluralize
+      desc "Load Master Data - #{cls_name.pluralize}"
+      task name => :environment do
+        puts "Importing #{name} \t".yellow
+        Rake::Task["usman:import:master_data:#{name}"].invoke
+      end
+    end
+
+    ["User", "Permission"].each do |cls_name|
+      name = cls_name.underscore.pluralize
+      desc "Load Data - #{cls_name.pluralize}"
+      task name => :environment do
+        puts "Importing #{name} \t".yellow
+        Rake::Task["usman:import:data:#{name}"].invoke
+      end
+    end
+
+    {
+      categories: "Dhatu::Category",
+      services: "Dhatu::Service",
+      sections: "Dhatu::Section",
+      section_types: "Dhatu::SectionType",
+      events: "Dhatu::Event",
+      offers: "Dhatu::Offer",
+      prices: "Dhatu::Price",
+      testimonials: "Dhatu::Testimonial",
+      team_members: "Dhatu::TeamMember",
+      branches: "Dhatu::Branch", 
+      promotions: "Dhatu::Promotion", 
+      promotion_attributes: "Dhatu::PromotionAttribute", 
+      blog_posts: "Dhatu::BlogPost"
+    }.each do |simple_name, cls_name|
+      name = cls_name.underscore.pluralize
+      desc "Load Data - #{simple_name.to_s.titleize}"
+      task simple_name => :environment do
+        puts "Importing #{simple_name.to_s.titleize} \t".yellow
+        Rake::Task["dhatu:import:data:#{name}"].invoke
+      end
     end
 
     namespace 'dummy' do
@@ -117,6 +167,15 @@ namespace 'import' do
           puts "Importing Team Members \t".yellow
           Rake::Task["dhatu:import:data:dummy:dhatu/team_members"].invoke
 
+          puts "Importing Promotions \t".yellow
+          Rake::Task["dhatu:import:data:dummy:dhatu/promotions"].invoke
+
+          puts "Importing Blog Posts \t".yellow
+          Rake::Task["dhatu:import:data:dummy:dhatu/blog_posts"].invoke
+          
+          puts "Importing Branches \t".yellow
+          Rake::Task["dhatu:import:data:dummy:dhatu/branches"].invoke
+
         rescue ArgumentError => e
             puts "Import Failed - #{e.message}".red
         rescue Exception => e
@@ -125,6 +184,38 @@ namespace 'import' do
         end
         puts " "
 
+      end
+
+      ["User", "Permission"].each do |cls_name|
+        name = cls_name.underscore.pluralize
+        desc "Load Data - #{cls_name.pluralize}"
+        task name => :environment do
+          puts "Importing #{name} \t".yellow
+          Rake::Task["usman:import:data:dummy:#{name}"].invoke
+        end
+      end
+
+      {
+        categories: "Dhatu::Category",
+        services: "Dhatu::Service",
+        sections: "Dhatu::Section",
+        section_types: "Dhatu::SectionType",
+        events: "Dhatu::Event",
+        offers: "Dhatu::Offer",
+        prices: "Dhatu::Price",
+        testimonials: "Dhatu::Testimonial",
+        team_members: "Dhatu::TeamMember",
+        branches: "Dhatu::Branch", 
+        promotions: "Dhatu::Promotion", 
+        promotion_attributes: "Dhatu::PromotionAttribute", 
+        blog_posts: "Dhatu::BlogPost"     
+      }.each do |simple_name, cls_name|
+          name = cls_name.underscore.pluralize
+          desc "Load Data - #{simple_name.to_s.titleize}"
+          task simple_name => :environment do
+            puts "Importing #{simple_name.to_s.titleize} \t".yellow
+            Rake::Task["dhatu:import:data:dummy:#{name}"].invoke
+          end
       end
 
     end
