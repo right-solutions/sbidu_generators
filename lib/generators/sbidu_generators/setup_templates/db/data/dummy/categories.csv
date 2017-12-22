@@ -24,3 +24,5 @@ Body, Dhatu::Service, Body, Body,,published,1
 Kids, Dhatu::Service, Kids, Kids,,published,1
 Treatments, Dhatu::Service, Treatments, Treatments,,published,1
 Skin and Facial Treatments, Dhatu::Service, Skin and Facial Treatments, Skin and Facial Treatments,,published,1
+Electronics, Dhatu::Offer,Electronics,Electronics,,published,1
+Travel, Dhatu::Offer,Travel,Travel,,published,2
