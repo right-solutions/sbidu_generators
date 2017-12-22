@@ -1,0 +1,6 @@
+name,username,designation,email,phone,super_admin,status
+Jacob Alex,jacob,Site Admin,jacob@nanosys-me.com,,FALSE,approved
+Kishore,kishore,Site Admin,kishore@nanosys-me.com,,FALSE,approved
+Abdul Anas,anas,Site Admin,abdul.anas@rightsolutions.io,,FALSE,approved
+Sanoop S Nair,sanoop,Site Admin,sanoop@rightsolutions.io,,TRUE,approved
+Krishna Prasad Varma,kpvarma,Site Admin,prasad@rightsolutions.io,,TRUE,approved

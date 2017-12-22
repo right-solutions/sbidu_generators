@@ -3,9 +3,8 @@ class Website::OffersController < Website::BaseController
 	layout 'website/theme'
 
 	def index
-		set_title("Red Velvet Salon, Karama - The best salon in Dubai")
+		@banner = Dhatu::Section.find_by_section_type("OFFERS_BANNER").published.first
 		@offers = Dhatu::Offer.published.order("priority ASC, title ASC").page(@current_page).per(@per_page)
-		@price_categories = Dhatu::Category.filter_by_category_type("Dhatu::Price").published.order("priority ASC, name ASC").all
 	end
 
 	private

@@ -79,3 +79,34 @@ bundle exec rails import:data:dummy:all
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+# Setup.sh
+
+Alternatevely you could make use of the shell script to run all these and create a rails application ready to launch with minimal template.
+
+You need to download the setup.sh from this repository to your working directory
+
+Then make it executable
+
+```ruby
+$ chmod +x setup.sh
+```
+
+Run the script to create a sbidu rails app where app_name.com is the domain name (a convention followed at sbidu)
+
+```ruby
+$ ./setup.sh app_name.com
+```
+
+Go to the app directory
+
+```ruby
+$ cd app_name.com
+```
+
+Run the generator to copy all website related scripts
+
+```ruby
+$ rails g sbidu_generators:website app_name.com
+```
+

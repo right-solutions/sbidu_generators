@@ -55,7 +55,7 @@
           </div>
           <ul class="c-menu c-arrow-dot1 c-theme">
             <% @categories.each do |c| %>
-            <li><%= link_to c.name, blog_search_path(category_id: c.id), class:"#{@blog_post.category == c ? 'active' : ''}" %></li>
+            <li><%= link_to c.name, blog_path(category_id: c.id), class:"#{@blog_post.category == c ? 'active' : ''}" %></li>
             <% end %>
           </ul>
         </div>
