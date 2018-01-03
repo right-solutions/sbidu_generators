@@ -37,14 +37,12 @@ gem 'state_machines-activerecord'
 
 # If you are working parallely on development version of kuppayam or usman,
 # and would like to use them use the kuppayam project path of your system
-# gem 'sbidu_generators', path: "/Users/rightsolutions/Projects/Products/sbidu_generators"
 # gem 'kuppayam', path: "/Users/rightsolutions/Projects/Products/kuppayam"
 # gem 'pattana', path: "/Users/rightsolutions/Projects/Products/pattana"
 # gem 'usman', path: "/Users/rightsolutions/Projects/Products/usman"
 # gem 'dhatu', path: "/Users/rightsolutions/Projects/Products/dhatu"
 
 # otherwise just use a published gem
-gem "sbidu_generators"
 gem "kuppayam", '~> 0.1', ">= 0.1.30"
 gem "pattana", '~> 0.1', ">= 0.1.22"
 gem "usman", '~> 0.3', ">= 0.3.33"
@@ -61,15 +59,6 @@ gem "kaminari"
 gem "active_model_serializers"
 gem 'listen', '>= 3.0.5', '< 3.2'
 
-group :test do
-  gem "shoulda"
-  #gem 'cucumber-rails', :require => false
-  #gem 'cucumber-websteps'
-  #gem 'pickle'
-  #gem 'capybara'
-  gem 'database_cleaner'
-end
-
 group :development do
   # Access an IRB console on exception pages or by using console anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -78,11 +67,14 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'capistrano', '~> 3.4.1', '>= 3.4.1'
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
-  gem 'capistrano-rails', '~> 1.1.3'
-  gem 'capistrano-bundler', '~> 1.1.4'
-  gem 'capistrano3-puma'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rbenv',   require: false,   github: "capistrano/rbenv"
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+
+  # gem 'sbidu_generators', path: "/Users/rightsolutions/Projects/Products/sbidu_generators"
+  gem "sbidu_generators"
 end
 
 group :development, :test do
@@ -97,6 +89,14 @@ group :development, :test do
   gem 'factory_bot_rails'
 
   gem 'pry', '~> 0.10.4'
+
+  gem "shoulda"
+  gem 'database_cleaner'
+
+  #gem 'cucumber-rails', :require => false
+  #gem 'cucumber-websteps'
+  #gem 'pickle'
+  #gem 'capybara'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

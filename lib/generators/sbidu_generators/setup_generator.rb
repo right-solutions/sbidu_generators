@@ -32,9 +32,11 @@ class SbiduGenerators::SetupGenerator < Rails::Generators::Base
     template "config/database.yml", "config/database.yml"
     template "config/database.sample.yml", "config/database.yml"
     template "config/nginx.conf", "config/nginx.conf"
+    template "config/nginx.conf", "config/carrierwave.rb"
 
     # Copy Deploy Configurations
-    template "config/deploy/production.rb", "config/deploy/production.rb"
+    template "Capfile", "Capfile"
+    template "config/deploy.rb", "config/deploy.rb"
 
     # Copy Initializers
     template "config/initializers/assets.rb", "config/initializers/assets.rb"

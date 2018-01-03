@@ -26,21 +26,22 @@
 # RS .gitignore Setup
 # -------------------
 
+.env
+
 # Mac Files
 .DS_Store
 *.DS_Store
 
 # Uploaded files 
+/public/assets
 /public/uploads/**/
 
 # Data Files
 config/database.yml
+config/secrets.yml.key
 
 # Secret Tokens
 config/initializers/secret_token.rb
 
-# dotenv
-# TODO Comment out this rule if environment variables can be committed
-.env
-config/application.yml
-public/assets
+
+

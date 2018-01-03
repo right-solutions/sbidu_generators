@@ -23,3 +23,5 @@ Dhatu::PromotionAttribute,published,FALSE,1
 Dhatu::PromotionEnquiry,published,FALSE,1
 Dhatu::Service,published,TRUE,1
 Dhatu::Product,published,TRUE,1
+Dhatu::Project,published,FALSE,1
+Dhatu::Client,published,FALSE,1

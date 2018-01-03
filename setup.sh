@@ -16,8 +16,8 @@ if [ $# -eq 0 ]
     cd $1
 
     # Add the generator gem 'sbidu_generators' to the Gemfile
-    echo "gem 'sbidu_generators'" >> Gemfile
-    # echo "gem 'sbidu_generators', path: '/Users/rightsolutions/Projects/Products/sbidu_generators'" >> Gemfile
+    #echo "gem 'sbidu_generators'" >> Gemfile
+    echo "gem 'sbidu_generators', path: '/Users/rightsolutions/Projects/Products/sbidu_generators'" >> Gemfile
 
     # Install all gems in the Gemfile
     bundle install
@@ -75,6 +75,23 @@ if [ $# -eq 0 ]
 
     # Run the generator script for website
     rails g sbidu_generators:website $1
+    if [[ $? -ne 0 ]]; then
+      echo "FAILED to run the generator script for website"
+      exit 1
+    fi
+
+    # Install all gems in the Gemfile
+    bundle install
+    if [[ $? -ne 0 ]]; then
+      echo "FAILED to run bundle install"
+      exit 1
+    fi
+
+    bundle exec cap install
+    if [[ $? -ne 0 ]]; then
+      echo "FAILED to run bundle exec cap install"
+      exit 1
+    fi
 
 fi
 

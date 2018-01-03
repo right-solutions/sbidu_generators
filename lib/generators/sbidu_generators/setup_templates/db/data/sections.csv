@@ -1,0 +1,10 @@
+title, section_type, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link, status
+About Us,ABOUT_US,About Us Section,,,,,,,published
+Contact Us,CONTACT_US,Contact Us Section,,,,,,,published
+About Us Banner,ABOUT_US_BANNER,About Us Banner Section,,,,,,,published
+Services Banner,SERVICES_BANNER,Services Banner Section,,,,,,,published
+Contact Us Banner,CONTACT_US_BANNER,Contact Us Banner Section,,,,,,,published
+About Us Footer,ABOUT_US_Footer,About Us Footer Section,,,,,,,published
+Slider 1,HOME_PAGE_SLIDE,Slider 1,,,,,,,published
+Slider 2,HOME_PAGE_SLIDE,Slider 2,,,,,,,published
+Slider 3,HOME_PAGE_SLIDE,Slider 3,,,,,,,published

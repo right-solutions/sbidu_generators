@@ -73,7 +73,7 @@
                     <% @recent_posts.each do |bp| %>
                     <li>
                       <div class="c-image">
-                        <%= display_image(bp, 'cover_image.image.tiny.url', class: "img-responsive") %>
+                        <%= display_image(bp, 'cover_image.image.small.url', class: "img-responsive") %>
                       </div>
                       <div class="c-post">
                         <a href="<%= blog_path(slug: bp.slug) %>" class="c-title">

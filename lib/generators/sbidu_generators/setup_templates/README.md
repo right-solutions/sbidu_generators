@@ -225,10 +225,41 @@ where 304079519b28 is the comtainer id
 
 https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04
 
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-16-04
+
 https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
 
 ```bash
 $ ssh deployer@34.250.212.49
 ```
+
+### Copy shared files
+
+```sh
+vi shared/database.yml
+```
+
+```ruby
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: <%%= MYSQL_USERNAME %>
+  password: <%%= MYSQL_PASSWORD %>
+  socket: /tmp/mysql.sock
+
+production:
+  <<: *default
+  database: <%= app_name.gsub(".", "_") %>_production
+```
+
+```sh
+vi shared/application.yml
+```
+
+
+### Optimization
+
+https://www.12factor.net/
 
 

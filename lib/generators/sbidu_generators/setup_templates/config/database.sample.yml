@@ -14,8 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %> 
-  host: mysql
+  password: <%%= ENV['MYSQL_ROOT_PASSWORD'] %>
 
 development:
   <<: *default
