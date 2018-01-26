@@ -39,7 +39,7 @@
 
 			<div class="c-pagination">
 				<%#= paginate(@blog_posts, :remote => false, views_prefix: 'website') %>
-				<%= paginate_kuppayam(@blog_posts, false) %>
+				<%= paginate_kuppayam(@blog_posts, remote: false) %>
 			</div>
 
 		</div>

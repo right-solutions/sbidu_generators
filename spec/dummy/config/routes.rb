@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   get   '/dashboard',   to: "dashboard#index",  as:   :dashboard
 
   # Website Pages
-  root 	'website/home#index'
+  root  'website/home#index'
 
-  get   '/about_us',   		to: "website/about_us#index",  as: :about_us
-  get   '/contact_us',   	to: "website/contact_us#index", as: :contact_us
+  get   '/about_us',      to: "website/about_us#index",  as: :about_us
+  get   '/contact_us',    to: "website/contact_us#index", as: :contact_us
 
   get   '/blogs',         to: "website/blog#index",       as: :blogs
   get   '/blog/:slug',    to: "website/blog#show",        as: :blog
@@ -22,7 +22,16 @@ Rails.application.routes.draw do
   get   '/services',      to: "website/services#index",   as: :services
   get   '/services/:id',  to: "website/services#show",   as: :service
   get   '/services/filter/:category_id',  to: "website/services#filter",    as: :filter_services
+
+  get   '/products',      to: "website/products#index",   as: :products
+  get   '/products/:id',  to: "website/products#show",   as: :service
+  get   '/products/filter/:category_id',  to: "website/products#filter",    as: :filter_products
+
+  get   '/projects',      to: "website/projects#index",   as: :projects
+  get   '/projects/:id',  to: "website/projects#show",   as: :project
+  get   '/projects/filter/:category_id',  to: "website/projects#filter",    as: :filter_projects
   
+  get   '/careers',      to: "website/careers#index",   as: :careers  
   get   '/offers',        to: "website/offers#index",    as: :offers
   get   '/pricing',       to: "website/prices#index",    as: :prices
   

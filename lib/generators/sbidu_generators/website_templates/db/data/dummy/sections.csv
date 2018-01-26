@@ -1,11 +1,15 @@
-title, section_type, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link, status
-About Us,ABOUT_US,About Us Section,,,,,,,published
-Contact Us,CONTACT_US,Contact Us Section,,,,,,,published
-About Us Banner,ABOUT_US_BANNER,About Us Banner Section,,,,,,,published
-Services Banner,SERVICES_BANNER,Services Banner Section,,,,,,,published
-Contact Us Banner,CONTACT_US_BANNER,Contact Us Banner Section,,,,,,,published
-About Us Footer,ABOUT_US_Footer,About Us Footer Section,,,,,,,published
-Slider 1,HOME_PAGE_SLIDE,Slider 1,,,,,,,published
-Slider 2,HOME_PAGE_SLIDE,Slider 2,,,,,,,published
-Slider 3,HOME_PAGE_SLIDE,Slider 3,,,,,,,published
-Book Now,BOOK_NOW,Configure this from Admin,,,,,,,published
+Name, code, status,priority,title, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link
+About Us Section,ABOUT_US_BANNER,published,1,About Us,We are Awesome!,,,,,,
+Contact Us Section,CONTACT_US_BANNER,published,2,Contact Us,Drop us a message to let us know how we can help you,,,,,,
+BLOG_BANNER,BLOG_BANNER,published,3,Going Places,"I havent been everywhere, but its on my list",,,,,,
+OFFERS_BANNER,OFFERS_BANNER,published,4,Limitted Offers,Grab your offer right not!,,,,,,
+SERVICES_BANNER,SERVICES_BANNER,published,5,Our Services,Serving better day by day,,,,,,
+PRODUCTS_BANNER,PRODUCTS_BANNER,published,6,Our Products,Click on the links left to filter down,,,,,,
+PROJECTS_BANNER,PROJECTS_BANNER,published,7,Recent Projects,Take a look at some of the great projects we have done recently.,,,,,,
+HOME_PAGE_SLIDE,HOME_PAGE_SLIDE,published,8,Aspire to inspire before we expire,"A good teacher can inspire hope, ignite the imagination, and instill a love of learning. Read more at: https://www.brainyquote.com/topics/inspire",,,,,,
+HOME_PAGE_SLIDE,HOME_PAGE_SLIDE,published,9,7 Billion Smiles and yours is my favorite,The most important thing is to try and inspire people so that they can be great in whatever they want to do. Read more at: https://www.brainyquote.com/topics/inspire,,,,,,
+HOME_PAGE_SLIDE,HOME_PAGE_SLIDE,published,10,Create your own Sunshine,Find your voice and inspire others to find theirs. Read more at: https://www.brainyquote.com/topics/inspire,,,,,,
+BOOK_NOW,BOOK_NOW,published,11,Download Free Sample,Fill up this form to get your free copy of the e-book - Himalayan Mistics,,,,,,
+ABOUT_US,ABOUT_US,published,12,About Us,About Us Section,,,,,,
+CONTACT_US,CONTACT_US,published,13,Contact Us,Contact Us Section,,,,,,
+ABOUT_US_FOOTER,ABOUT_US_FOOTER,published,14,About Us,,ellow Leaf Hammocks is a company trying to save the world via hammocks. The brand plans to accomplish this by selling hand-woven hammocks from artisans in Thailand.,,,,,

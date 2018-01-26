@@ -1,11 +1,11 @@
-title, section_type, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link, status
-About Us,ABOUT_US,About Us Section,,,,,,,published
-Contact Us,CONTACT_US,Contact Us Section,,,,,,,published
-About Us Banner,ABOUT_US_BANNER,About Us Banner Section,,,,,,,published
-Services Banner,SERVICES_BANNER,Services Banner Section,,,,,,,published
-Contact Us Banner,CONTACT_US_BANNER,Contact Us Banner Section,,,,,,,published
-About Us Footer,ABOUT_US_Footer,About Us Footer Section,,,,,,,published
-Slider 1,HOME_PAGE_SLIDE,Slider 1,,,,,,,published
-Slider 2,HOME_PAGE_SLIDE,Slider 2,,,,,,,published
-Slider 3,HOME_PAGE_SLIDE,Slider 3,,,,,,,published
-Book Now,BOOK_NOW,Configure this from Admin,,,,,,,published
+name,code,title, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link, status,priority
+About Us,ABOUT_US,About Us,About Us Section,,,,,,,published,1
+Contact Us,CONTACT_US,Contact Us,Contact Us Section,,,,,,,published,2
+About Us Banner,ABOUT_US_BANNER,About Us Banner,About Us Banner Section,,,,,,,published,3
+Services Banner,SERVICES_BANNER,Services Banner,Services Banner Section,,,,,,,published,4
+Contact Us Banner,CONTACT_US_BANNER,Contact Us Banner,Contact Us Banner Section,,,,,,,published,5
+About Us Footer,ABOUT_US_Footer,About Us Footer,About Us Footer Section,,,,,,,published,6
+Slider 1,HOME_PAGE_SLIDE,Slider 1,Slider 1,,,,,,,published,7
+Slider 2,HOME_PAGE_SLIDE,Slider 2,Slider 2,,,,,,,published,8
+Slider 3,HOME_PAGE_SLIDE,Slider 3,Slider 3,,,,,,,published,9
+Book Now,BOOK_NOW,Book Now,Configure this from Admin,,,,,,,published,10

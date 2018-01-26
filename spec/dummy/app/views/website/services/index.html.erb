@@ -11,7 +11,7 @@
       <li><%= link_to "All", services_path %></a></li>
       <% if  @category %>
       <li class="c-font-white">/</li>
-      <li><%= link_to @category.name, services_filter_path(category_id: @category.id) %></a></li>
+      <li><%= link_to @category.name, filter_services_path(category_id: @category.id) %></a></li>
       <% end %>
     </ul>
   </div>
@@ -41,7 +41,7 @@
           </div>
           <ul class="c-menu c-arrow-dot1 c-theme">
             <% @categories.each do |c| %>
-            <li><%= link_to c.name, services_filter_path(category_id: c), class:"#{@category == c ? 'active' : ''}"  %></a></li> 
+            <li><%= link_to c.name, filter_services_path(category_id: c), class:"#{@category == c ? 'active' : ''}"  %></a></li> 
             <% end %>
           </ul>
         </div>
@@ -82,7 +82,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-12">
-                  <p style="min-height:100px !important;"><%= raw truncate(s.meta_description, length: 155) {link_to "(Read More)", service_path(s), style: "color:#ff6b57;"}%> </p>
+                  <p style="min-height:100px !important;"><%= raw truncate(s.short_description, length: 155) {link_to "(Read More)", service_path(s), style: "color:#ff6b57;"}%> </p>
                 </div>
               </div>
               <div class="row">

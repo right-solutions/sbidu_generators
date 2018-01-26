@@ -3,8 +3,8 @@ class Website::ContactUsController < Website::BaseController
 	layout "website/theme"
 
 	def index
-		@banner = Dhatu::Section.find_by_section_type("CONTACT_US_BANNER").published.first
-		@contact_us = Dhatu::Section.find_by_section_type("CONTACT_US").published.first
+		@banner = Dhatu::Section.find_by_code("CONTACT_US_BANNER").published.first
+		@contact_us = Dhatu::Section.find_by_code("CONTACT_US").published.first
 		@enquiry = Enquiry.find_by_id(params[:id]) if params[:id]
 	end
 	

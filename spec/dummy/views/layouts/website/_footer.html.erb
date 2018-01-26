@@ -56,7 +56,7 @@
 										<h4 class="c-post-title">
 											<%= link_to blog_post.title, "#" %>
 										</h4>
-										<p class="c-text"><%= truncate(raw(blog_post.meta_description), :length => 100) %> <%= link_to "(Read More)", "#" %></p>
+										<p class="c-text"><%= truncate(raw(blog_post.short_description), :length => 100) %> <%= link_to "(Read More)", "#" %></p>
 									</div>
 								</div>
 

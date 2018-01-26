@@ -3,11 +3,11 @@ class Website::BlogController < Website::BaseController
 	layout "website/theme"
 
 	def index
-		@banner = Dhatu::Section.find_by_section_type("BLOG_BANNER").published.first
+		@banner = Dhatu::Section.find_by_code("BLOG_BANNER").published.first
 
 		@categories = Dhatu::Category.where(category_type: "Dhatu::BlogPost").all
-		@relation = Dhatu::BlogPost.published.includes(:cover_image).where("")
 		
+		@relation = Dhatu::BlogPost.published.includes(:cover_image).where("")
 		@relation = @relation.search(params[:query]) if params[:query]
 		@relation = @relation.where("category_id = ?", params[:category_id]) if params[:category_id]
 

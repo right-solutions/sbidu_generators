@@ -16,13 +16,13 @@ class SbiduGenerators::WebsiteGenerator < Rails::Generators::Base
   end
 
   def configure_routes
-    template "config/routes.rb",  "config/routes.rb"
+    template "config/routes.rb",  "config/routes.rb", force: true
   end
 
   def setup_webstite
     directory "app/controllers/website",  "app/controllers/website"
     directory "app/views/website",  "app/views/website"
-    template "app/views/layouts/common/_banner.html.erb",  "app/views/layouts/common/_banner.html.erb"
+    template "app/views/layouts/common/_banner.html.erb",  "app/views/layouts/common/_banner.html.erb", force: true
   end
 
   private

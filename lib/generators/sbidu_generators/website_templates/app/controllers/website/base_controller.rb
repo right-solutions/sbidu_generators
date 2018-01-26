@@ -1,8 +1,15 @@
-class Website::BaseController < ApplicationController
+class Website::BaseController < Kuppayam::BaseController
   
   layout 'website/home'
 
-  before_action :get_promotion, :configure_popup, :get_general_data, :set_show_book_now_form
+  before_action :get_page, :get_general_data
+                
+  before_action :set_meta_title, if: -> { @page }
+
+  # Uncomment this only if you need promotions
+  # before_action :get_promotion, 
+  #               :configure_popup, 
+  #               :set_show_book_now_form
   
   private
 
@@ -14,12 +21,32 @@ class Website::BaseController < ApplicationController
     @javascript_filename = "starter_kit"
   end
 
-  def get_general_data
-    @footer_section = Dhatu::Section.find_by_section_type("ABOUT_US_FOOTER").published.first
-    @book_now_section = Dhatu::Section.find_by_section_type("BOOK_NOW").published.first
-    @main_branch = Dhatu::Branch.published.main_branch.first
-    @service_categories = Dhatu::Category.where("category_type = 'Dhatu::Service'").published.all
+  def set_meta_title
+    # Setting Dynamic Title from Dhatu::MetaTag
+    if @page
+      meta_tag_title = @page.meta_tags.published.where("meta_key = 'title'").first
+      set_title(meta_tag_title.meta_value) if meta_tag_title
+    end
   end
+
+  # Get Data to make things Dynamic
+  # -------------------------------
+
+  def get_page
+    @page = Dhatu::Page.find_by_code("home-page")
+  end
+
+  def get_general_data
+    # Put Code to fetch generic data.
+    # Refer the given examples
+    # @footer_section = Dhatu::Section.find_by_code("ABOUT_US_FOOTER").published.first
+    # @book_now_section = Dhatu::Section.find_by_code("BOOK_NOW").published.first
+    # @main_branch = Dhatu::Branch.published.main_branch.first
+    # @service_categories = Dhatu::Category.where("category_type = 'Dhatu::Service'").published.all
+  end
+
+  # Promotion Methods
+  # -----------------
 
   def get_promotion
     @promotion = Dhatu::Promotion.published.first
@@ -43,25 +70,6 @@ class Website::BaseController < ApplicationController
 
   def set_show_book_now_form
     @show_book_now_form = true
-  end
-
-  def generate_category_breadcrumbs
-    @links = [{name: "Home", link: root_path}, 
-              {name: "Distribution", link: categories_path}]
-    
-    # Generating Dynamic Breadcrumbs with category heirarchy
-    @parent_categories = []
-    parent_category = @category
-
-    loop do
-      @parent_categories << parent_category
-      break if parent_category.parent_id.blank?
-      parent_category = parent_category.parent
-    end if parent_category
-
-    @parent_categories.reverse.each do |c|
-      @links << {name: c.name, link: category_path(permalink: c.permalink)}
-    end
   end
   
 end

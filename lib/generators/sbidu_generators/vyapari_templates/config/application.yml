@@ -1,0 +1,5 @@
+# Sbidu Generators - To Be Changed
+production:
+  AWS_S3_BUCKET_NAME: '<%= app_name -%>'
+  AWS_ACCESS_KEY_ID: 'AWS_ACCESS_KEY_ID'
+  AWS_SECRET_ACCESS_KEY: 'AWS_SECRET_ACCESS_KEY'

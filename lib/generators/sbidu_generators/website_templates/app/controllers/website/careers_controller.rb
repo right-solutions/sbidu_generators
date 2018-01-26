@@ -1,14 +1,15 @@
-class Website::CareersController < Website::BaseController
+class Website::AboutUsController < Website::BaseController
+
+	layout "website/theme"
 
 	def index
-		@events = []
-		set_title("Red Velvet Salon, Karama - The best salon in Dubai")
+		@banner = Dhatu::Section.find_by_code("CAREERS_BANNER").published.first
 	end
 
 	private
 
 	def set_navs
-    set_nav("website/careers")
+    set_nav("website/about_us")
   end
 	
 end

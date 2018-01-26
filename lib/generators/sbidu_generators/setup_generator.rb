@@ -17,40 +17,40 @@ class SbiduGenerators::SetupGenerator < Rails::Generators::Base
 
   def start_setting_up
     # Copy .gitignore, Dockerfile, 
-    template "gitignore", ".gitignore"
-    template "rspec", ".rspec"
-    template "ruby-version", ".ruby-version"
-    template "Gemfile", "Gemfile"
-    template "README.md", "README.md"
+    template "gitignore", ".gitignore", force: true
+    template "rspec", ".rspec", force: true
+    template "ruby-version", ".ruby-version", force: true
+    template "Gemfile", "Gemfile", force: true
+    template "README.md", "README.md", force: true
 
     # Copy Docker related files
-    template "Dockerfile", "Dockerfile"
-    template "docker-compose.yml", "docker-compose.yml"
+    template "Dockerfile", "Dockerfile", force: true
+    template "docker-compose.yml", "docker-compose.yml", force: true
 
     # Create the configuration files
-    template "config/application.yml", "config/application.yml"
-    template "config/database.yml", "config/database.yml"
-    template "config/database.sample.yml", "config/database.yml"
-    template "config/nginx.conf", "config/nginx.conf"
-    template "config/nginx.conf", "config/carrierwave.rb"
+    template "config/application.yml", "config/application.yml", force: true
+    template "config/database.yml", "config/database.yml", force: true
+    template "config/database.sample.yml", "config/database.yml", force: true
+    template "config/nginx.conf", "config/nginx.conf", force: true
+    template "config/nginx.conf", "config/carrierwave.rb", force: true
 
     # Copy Deploy Configurations
-    template "Capfile", "Capfile"
-    template "config/deploy.rb", "config/deploy.rb"
+    template "Capfile", "Capfile", force: true
+    template "config/deploy.rb", "config/deploy.rb", force: true
 
     # Copy Initializers
-    template "config/initializers/assets.rb", "config/initializers/assets.rb"
-    template "config/initializers/overide_kuppayam_controllers.rb", "config/initializers/overide_kuppayam_controllers.rb"
-    template "config/initializers/overide_pattana_controllers.rb", "config/initializers/overide_pattana_controllers.rb"
-    template "config/initializers/overide_usman_controllers.rb", "config/initializers/overide_usman_controllers.rb"
-    template "config/initializers/overide_dhatu_controllers.rb", "config/initializers/overide_dhatu_controllers.rb"
+    template "config/initializers/assets.rb", "config/initializers/assets.rb", force: true
+    template "config/initializers/overide_kuppayam_controllers.rb", "config/initializers/overide_kuppayam_controllers.rb", force: true
+    template "config/initializers/overide_pattana_controllers.rb", "config/initializers/overide_pattana_controllers.rb", force: true
+    template "config/initializers/overide_usman_controllers.rb", "config/initializers/overide_usman_controllers.rb", force: true
+    template "config/initializers/overide_dhatu_controllers.rb", "config/initializers/overide_dhatu_controllers.rb", force: true
 
     # Copy Import Data and Data CSVs
     directory "db/data", "db/data"
     directory "db/master_data", "db/master_data"
 
     # Copy data.rake task
-    template "lib/tasks/data.rake", "lib/tasks/data.rake"
+    template "lib/tasks/data.rake", "lib/tasks/data.rake", force: true
   end
 
   def configure_routes
@@ -70,11 +70,11 @@ class SbiduGenerators::SetupGenerator < Rails::Generators::Base
   end
 
   def setup_controllers
-    template "app/controllers/application_controller.rb",  "app/controllers/application_controller.rb"
-    template "app/controllers/dashboard_controller.rb",  "app/controllers/dashboard_controller.rb"
-    template "app/controllers/landing_controller.rb",  "app/controllers/landing_controller.rb"
-    template "app/controllers/website/base_controller.rb",  "app/controllers/website/base_controller.rb"
-    template "app/controllers/website/home_controller.rb",  "app/controllers/website/home_controller.rb"
+    template "app/controllers/application_controller.rb",  "app/controllers/application_controller.rb", force: true
+    template "app/controllers/dashboard_controller.rb",  "app/controllers/dashboard_controller.rb", force: true
+    template "app/controllers/landing_controller.rb",  "app/controllers/landing_controller.rb", force: true
+    template "app/controllers/website/base_controller.rb",  "app/controllers/website/base_controller.rb", force: true
+    template "app/controllers/website/home_controller.rb",  "app/controllers/website/home_controller.rb", force: true
   end
 
   def setup_views
@@ -85,8 +85,8 @@ class SbiduGenerators::SetupGenerator < Rails::Generators::Base
   end
 
   def setup_basic_assets
-    template "app/assets/stylesheets/starter_kit.css", "app/assets/stylesheets/starter_kit.css"
-    template "app/assets/javascripts/starter_kit.js", "app/assets/javascripts/starter_kit.js"
+    template "app/assets/stylesheets/starter_kit.css", "app/assets/stylesheets/starter_kit.css", force: true
+    template "app/assets/javascripts/starter_kit.js", "app/assets/javascripts/starter_kit.js", force: true
 
     directory "app/assets/stylesheets/starter_kit", "app/assets/stylesheets/starter_kit"
     directory "app/assets/javascripts/starter_kit", "app/assets/javascripts/starter_kit"

@@ -45,6 +45,9 @@ if [ $# -eq 0 ]
       exit 1
     fi
 
+    # This is to avoid an error while runnig migrations locally
+    rails db:environment:set RAILS_ENV=development
+
     # Create Database & run migration 
 		rails db:drop db:create
     if [[ $? -ne 0 ]]; then

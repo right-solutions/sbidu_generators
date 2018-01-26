@@ -7,8 +7,8 @@ Country,published,FALSE,1
 Region,published,FALSE,1
 City,published,FALSE,1
 Locality,published,FALSE,1
+Dhatu::Page,published,FALSE,1
 Dhatu::Section,published,FALSE,1
-Dhatu::SectionType,published,FALSE,1
 Dhatu::BlogPost,published,TRUE,1
 Dhatu::Branch,published,FALSE,1
 Dhatu::Offer,published,FALSE,1

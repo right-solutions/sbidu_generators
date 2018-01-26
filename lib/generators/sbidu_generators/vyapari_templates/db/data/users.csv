@@ -1,0 +1,7 @@
+name,username,designation,email,phone,super_admin,status
+User 1,user1,Site Admin,user1@yopmail.com,,FALSE,approved
+User 2,user2,Site Admin,user2@yopmail.com,,FALSE,approved
+Abdul Anas,anas,Site Admin,abdul.anas@rightsolutions.io,,FALSE,approved
+Vinodh Ellath,vinodh,Site Admin,vinodh@rightsolutions.ae,,FALSE,approved
+Sanoop S Nair,sanoop,Site Admin,sanoop@rightsolutions.io,,TRUE,approved
+Krishna Prasad Varma,kpvarma,Site Admin,prasad@rightsolutions.io,,TRUE,approved

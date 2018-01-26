@@ -1,7 +1,6 @@
 user,feature,can_create,can_read,can_update,can_delete
 anas,Dhatu::Category,TRUE,TRUE,TRUE,TRUE
 anas,Dhatu::Section,TRUE,TRUE,TRUE,TRUE
-anas,Dhatu::SectionType,TRUE,TRUE,TRUE,FALSE
 anas,Dhatu::Branch,TRUE,TRUE,TRUE,TRUE
 anas,Dhatu::BlogPost,TRUE,TRUE,TRUE,TRUE
 anas,Dhatu::Booking,TRUE,TRUE,TRUE,TRUE
@@ -12,7 +11,6 @@ anas,Permission,TRUE,TRUE,TRUE,FALSE
 vinodh,Dhatu::Price,TRUE,TRUE,TRUE,TRUE
 vinodh,Dhatu::Category,TRUE,TRUE,TRUE,TRUE
 vinodh,Dhatu::Section,TRUE,TRUE,TRUE,TRUE
-vinodh,Dhatu::SectionType,TRUE,TRUE,TRUE,FALSE
 vinodh,Dhatu::Branch,TRUE,TRUE,TRUE,TRUE
 vinodh,Dhatu::BlogPost,TRUE,TRUE,TRUE,TRUE
 vinodh,Dhatu::Booking,TRUE,TRUE,TRUE,TRUE
@@ -23,7 +21,6 @@ vinodh,Permission,TRUE,TRUE,TRUE,FALSE
 junaid,Dhatu::Price,TRUE,TRUE,TRUE,TRUE
 junaid,Dhatu::Category,TRUE,TRUE,TRUE,TRUE
 junaid,Dhatu::Section,TRUE,TRUE,TRUE,TRUE
-junaid,Dhatu::SectionType,TRUE,TRUE,TRUE,FALSE
 junaid,Dhatu::Branch,TRUE,TRUE,TRUE,TRUE
 junaid,Dhatu::BlogPost,TRUE,TRUE,TRUE,TRUE
 junaid,Dhatu::Booking,TRUE,TRUE,TRUE,TRUE
