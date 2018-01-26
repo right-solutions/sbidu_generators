@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get   '/services/filter/:category_id',  to: "website/services#filter",    as: :filter_services
 
   get   '/products',      to: "website/products#index",   as: :products
-  get   '/products/:id',  to: "website/products#show",   as: :service
+  get   '/products/:id',  to: "website/products#show",   as: :product
   get   '/products/filter/:category_id',  to: "website/products#filter",    as: :filter_products
 
   get   '/projects',      to: "website/projects#index",   as: :projects
