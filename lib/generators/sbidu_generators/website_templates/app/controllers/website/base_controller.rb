@@ -26,6 +26,8 @@ class Website::BaseController < Kuppayam::BaseController
     if @page
       meta_tag_title = @page.meta_tags.published.where("meta_key = 'title'").first
       set_title(meta_tag_title.meta_value) if meta_tag_title
+    else
+      set_title("Home Page - Created with SBIDU")
     end
   end
 

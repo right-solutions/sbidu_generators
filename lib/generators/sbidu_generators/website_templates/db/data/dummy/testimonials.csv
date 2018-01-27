@@ -1,1 +1,6 @@
-name, designation, organisation, description, status, featured, priority
+name, designation, organisation,statement, status, featured, priority
+Bob Mathews,COO,Coral Seafoods,"You made it so simple. My new site is so much faster and easier to work with than my old site. I just choose the page, make the change and click save. Thanks, guys!",published,TRUE,1
+Omer Ul Huq,Information Systems Manager,Bank of Dubai,Wow. I just updated my site and it was SO SIMPLE. I am blown away. You guys truly kick ass. Thanks for being so awesome. High Fives!,published,TRUE,2
+Fathima Abdullah ,Owner,Marhaba Textiles,"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eius mod tempor incididunt ut labore et dolore magna aliqua Ut enim ad mini KJd veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coz consequat. Duis aute irure dolor in reprehenderit in voluptate velit se ckh dolore eu fugiat nulla pariatur.",published,TRUE,3
+Yeltzin Bohr,Managing Director,SafeLinks Investments,"ut aliquip ex ea coz consequat. Duis aute irure dolor in reprehenderit in voluptate velit se ckh dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis",published,FALSE,4
+Padma Warrier,Founder,Berlin School of Dance,"Duis aute irure dolor in reprehenderit in voluptate velit se ckh dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui",unpublished,FALSE,5

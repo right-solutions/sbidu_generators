@@ -1,10 +1,12 @@
 name, code,status,priority,feature
-Home Page,HOME_PAGE,published,1,
-About Us Page,ABOUT_US_PAGE,published,2,
-Contact Us Page,CONTACT_US_PAGE,published,3,
-Products Page,PRODUCTS_PAGE,published,4,Dhatu::Product
-Services Page,SERVICES_PAGE,published,5,Dhatu::Service
-Projects Page,PROJECTS_PAGE,published,6,Dhatu::Project
-Offers Page,OFFERS_PAGE,unpublished,7,Dhatu::Offer
-Prices Page,PRICES_PAGE,unpublished,8,Dhatu::Price
-Blogs Page,BLOGS_PAGE,unpublished,9,Dhatu::BlogPost
+General,GENERAL_PAGE,published,1,
+Home Page,HOME_PAGE,published,2,
+About Us Page,ABOUT_US_PAGE,published,3,
+Contact Us Page,CONTACT_US_PAGE,published,4,
+Products Page,PRODUCTS_PAGE,published,5,Dhatu::Product
+Services Page,SERVICES_PAGE,published,6,Dhatu::Service
+Projects Page,PROJECTS_PAGE,published,7,Dhatu::Project
+Offers Page,OFFERS_PAGE,unpublished,8,Dhatu::Offer
+Pricing Page,PRICING_PAGE,unpublished,9,Dhatu::Price
+Blogs Page,BLOGS_PAGE,unpublished,10,Dhatu::BlogPost
+Careers Page,CAREERS_PAGE,unpublished,11,Dhatu::Job

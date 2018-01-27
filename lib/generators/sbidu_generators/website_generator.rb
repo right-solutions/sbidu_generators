@@ -20,9 +20,20 @@ class SbiduGenerators::WebsiteGenerator < Rails::Generators::Base
   end
 
   def setup_webstite
-    directory "app/controllers/website",  "app/controllers/website"
-    directory "app/views/website",  "app/views/website"
+    directory "app/controllers/website",  "app/controllers/website", force: true
+    directory "app/views/website",  "app/views/website", force: true
     template "app/views/layouts/common/_banner.html.erb",  "app/views/layouts/common/_banner.html.erb", force: true
+  end
+
+  def copy_seed_data
+    puts "Copying Seed Data"
+
+    # Copy Import Data and Data CSVs
+    directory "db/data", "db/data", force: true
+    directory "db/master_data", "db/master_data", force: true
+
+    # Copy data.rake task
+    template "lib/tasks/data.rake", "lib/tasks/data.rake", force: true
   end
 
   private

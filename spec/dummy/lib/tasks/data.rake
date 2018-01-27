@@ -40,9 +40,6 @@ namespace 'import' do
         puts "Importing Prices \t".yellow
         Rake::Task["dhatu:import:data:dhatu/prices"].invoke
 
-        puts "Importing Section Types \t".yellow
-        Rake::Task["dhatu:import:data:dhatu/section_types"].invoke
-
         puts "Importing Sections \t".yellow
         Rake::Task["dhatu:import:data:dhatu/sections"].invoke
 
@@ -95,8 +92,8 @@ namespace 'import' do
     {
       categories: "Dhatu::Category",
       services: "Dhatu::Service",
+      section_types: "Dhatu::Page",
       sections: "Dhatu::Section",
-      section_types: "Dhatu::SectionType",
       events: "Dhatu::Event",
       offers: "Dhatu::Offer",
       prices: "Dhatu::Price",
@@ -151,9 +148,6 @@ namespace 'import' do
 
           puts "Importing Prices \t".yellow
           Rake::Task["dhatu:import:data:dummy:dhatu/prices"].invoke
-
-          puts "Importing Section Types \t".yellow
-          Rake::Task["dhatu:import:data:dummy:dhatu/section_types"].invoke
 
           puts "Importing Sections \t".yellow
           Rake::Task["dhatu:import:data:dummy:dhatu/sections"].invoke

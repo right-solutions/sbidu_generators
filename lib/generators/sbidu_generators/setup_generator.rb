@@ -44,13 +44,6 @@ class SbiduGenerators::SetupGenerator < Rails::Generators::Base
     template "config/initializers/overide_pattana_controllers.rb", "config/initializers/overide_pattana_controllers.rb", force: true
     template "config/initializers/overide_usman_controllers.rb", "config/initializers/overide_usman_controllers.rb", force: true
     template "config/initializers/overide_dhatu_controllers.rb", "config/initializers/overide_dhatu_controllers.rb", force: true
-
-    # Copy Import Data and Data CSVs
-    directory "db/data", "db/data"
-    directory "db/master_data", "db/master_data"
-
-    # Copy data.rake task
-    template "lib/tasks/data.rake", "lib/tasks/data.rake", force: true
   end
 
   def configure_routes
@@ -78,18 +71,18 @@ class SbiduGenerators::SetupGenerator < Rails::Generators::Base
   end
 
   def setup_views
-    remove_file "app/views/application.html.erb"
-    directory "app/views/dashboard",  "app/views/dashboard"
-    directory "app/views/layouts",  "app/views/layouts"
-    directory "app/views/website/home",  "app/views/website/home"
+    remove_file "app/views/application.html.erb", force: true
+    directory "app/views/dashboard",  "app/views/dashboard", force: true
+    directory "app/views/layouts",  "app/views/layouts", force: true
+    directory "app/views/website/home",  "app/views/website/home", force: true
   end
 
   def setup_basic_assets
     template "app/assets/stylesheets/starter_kit.css", "app/assets/stylesheets/starter_kit.css", force: true
     template "app/assets/javascripts/starter_kit.js", "app/assets/javascripts/starter_kit.js", force: true
 
-    directory "app/assets/stylesheets/starter_kit", "app/assets/stylesheets/starter_kit"
-    directory "app/assets/javascripts/starter_kit", "app/assets/javascripts/starter_kit"
+    directory "app/assets/stylesheets/starter_kit", "app/assets/stylesheets/starter_kit", force: true
+    directory "app/assets/javascripts/starter_kit", "app/assets/javascripts/starter_kit", force: true
   end
 
   private

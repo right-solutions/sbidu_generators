@@ -69,14 +69,7 @@ if [ $# -eq 0 ]
       exit 1
     fi
 
-		# Import required data
-    rails import:data:all
-		if [[ $? -ne 0 ]]; then
-      echo "FAILED to import data"
-      exit 1
-    fi
-
-    # Run the generator script for website
+		# Run the generator script for website
     rails g sbidu_generators:website $1
     if [[ $? -ne 0 ]]; then
       echo "FAILED to run the generator script for website"
@@ -87,6 +80,13 @@ if [ $# -eq 0 ]
     bundle install
     if [[ $? -ne 0 ]]; then
       echo "FAILED to run bundle install"
+      exit 1
+    fi
+
+    # Import required data
+    rails import:data:all
+    if [[ $? -ne 0 ]]; then
+      echo "FAILED to import data"
       exit 1
     fi
 

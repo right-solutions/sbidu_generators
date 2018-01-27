@@ -1,15 +1,15 @@
-Name, code, status,priority,title, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link
-About Us Section,ABOUT_US_BANNER,published,1,About Us,We are Awesome!,,,,,,
-Contact Us Section,CONTACT_US_BANNER,published,2,Contact Us,Drop us a message to let us know how we can help you,,,,,,
-BLOG_BANNER,BLOG_BANNER,published,3,Going Places,"I havent been everywhere, but its on my list",,,,,,
-OFFERS_BANNER,OFFERS_BANNER,published,4,Limitted Offers,Grab your offer right not!,,,,,,
-SERVICES_BANNER,SERVICES_BANNER,published,5,Our Services,Serving better day by day,,,,,,
-PRODUCTS_BANNER,PRODUCTS_BANNER,published,6,Our Products,Click on the links left to filter down,,,,,,
-PROJECTS_BANNER,PROJECTS_BANNER,published,7,Recent Projects,Take a look at some of the great projects we have done recently.,,,,,,
-HOME_PAGE_SLIDE,HOME_PAGE_SLIDE,published,8,Aspire to inspire before we expire,"A good teacher can inspire hope, ignite the imagination, and instill a love of learning. Read more at: https://www.brainyquote.com/topics/inspire",,,,,,
-HOME_PAGE_SLIDE,HOME_PAGE_SLIDE,published,9,7 Billion Smiles and yours is my favorite,The most important thing is to try and inspire people so that they can be great in whatever they want to do. Read more at: https://www.brainyquote.com/topics/inspire,,,,,,
-HOME_PAGE_SLIDE,HOME_PAGE_SLIDE,published,10,Create your own Sunshine,Find your voice and inspire others to find theirs. Read more at: https://www.brainyquote.com/topics/inspire,,,,,,
-BOOK_NOW,BOOK_NOW,published,11,Download Free Sample,Fill up this form to get your free copy of the e-book - Himalayan Mistics,,,,,,
-ABOUT_US,ABOUT_US,published,12,About Us,About Us Section,,,,,,
-CONTACT_US,CONTACT_US,published,13,Contact Us,Contact Us Section,,,,,,
-ABOUT_US_FOOTER,ABOUT_US_FOOTER,published,14,About Us,,ellow Leaf Hammocks is a company trying to save the world via hammocks. The brand plans to accomplish this by selling hand-woven hammocks from artisans in Thailand.,,,,,
+name,code,page,title, sub_title, short_description, long_description, button_one_text, button_two_text, button_one_link, button_two_link, status,priority
+Book Now,BOOK_NOW,GENERAL_PAGE,Book Now,Configure this from Admin,,,,,,,unpublished,10
+About Us Footer,ABOUT_US_FOOTER,GENERAL_PAGE,Company Ltd.,,"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc.",,,,,,unpublished,6
+About Us Section,ABOUT_US_HOME,HOME_PAGE,About Us,We are Awesome,"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc.",,,,,,unpublished,1
+Slider 1,HOME_PAGE_SLIDE_1,HOME_PAGE,Marketing Captions are Necessary,Slider 1 Description,,,,,,,unpublished,2
+Slider 2,HOME_PAGE_SLIDE_2,HOME_PAGE,Sell more with Images,Slider 2 Description,,,,,,,unpublished,3
+Slider 3,HOME_PAGE_SLIDE_3,HOME_PAGE,We have a digital presense online,Slider 3 Description,,,,,,,unpublished,4
+About Us Banner,ABOUT_US_BANNER,ABOUT_US_PAGE,About Us,We are Awesome,,,,,,,published,1
+About Us,ABOUT_US,ABOUT_US_PAGE,About Us,We are Awesome,,"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eius mod tempor incididunt ut labore et dolore magna aliqua Ut enim ad mini KJd veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coz consequat. Duis aute irure dolor in reprehenderit in voluptate velit se ckh dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc.",,,,,published,2
+Our Vision,ABOUT_US,ABOUT_US_PAGE,Our Vision,,,"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eius mod tempor incididunt ut labore et dolore magna aliqua Ut enim ad mini KJd veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coz consequat. Duis aute irure dolor in reprehenderit in voluptate velit se ckh dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc.",,,,,published,3
+Our Mission,ABOUT_US,ABOUT_US_PAGE,Our Mission,,,"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eius mod tempor incididunt ut labore et dolore magna aliqua Ut enim ad mini KJd veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coz consequat. Duis aute irure dolor in reprehenderit in voluptate velit se ckh dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc.",,,,,published,4
+Services Page Banner,SERVICES_BANNER,SERVICES_PAGE,Our Services,Best Service Provider in the Region,,,,,,,published,1
+Products Page Banner,PRODUCTS_BANNER,PRODUCTS_PAGE,Our Products,Browse through our Amazing Products!,,,,,,,published,1
+Projects Page Banner,PROJECTS_BANNER,PROJECTS_PAGE,Our Portfolio,Checkout our Portfolio,,,,,,,published,1
+Contact Us Banner,CONTACT_US_BANNER,CONTACT_US_PAGE,Contact Us,Drop us a message!,,,,,,,published,1
